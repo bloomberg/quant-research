@@ -1,0 +1,12 @@
+name: quant-research
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+  - jupyter
+  - bqplot
+  - voila
