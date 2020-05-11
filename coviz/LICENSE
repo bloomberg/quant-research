@@ -200,3 +200,12 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+
+Population data file License
+============================
+
+The file Population.csv is adapted from the World Bank Data Catalog.
+https://data.worldbank.org/indicator/SP.POP.TOTL?end=2018&start=1960
+
+The license and attribution may be found at 
+https://datacatalog.worldbank.org/public-licenses#cc-by
