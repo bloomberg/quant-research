@@ -53,7 +53,15 @@ You can select :
 
 ![Rebased graph](screenshots/Rebased_graph_white_theme.PNG)
 
-The third and last tab shows an interactive HeatMap.
+The third tab shows an interactive HeatMap.
 Like for the previous tab you can select the countries/states and the data you want to plot.
 
-![DNA graph](screenshots/DNA_graph_white_theme.PNG)
+![HeatMap graph](screenshots/HeatMap_white_theme.PNG)
+
+The last tab allows you to create your own graph. You can select the data you want to represent on X and Y axes (by clicking on the toggle buttons) and you can select any country or US states. Also you have the possibility to represent the whole time series (Line plot) that you can animate or only the last data point (Scatter plot).
+
+![OwnGraph1](screenshots/Create_your_own_graph_1_white_theme.PNG)
+
+![OwnGraph2](screenshots/Create_your_own_graph_2_white_theme.PNG)
+
+
