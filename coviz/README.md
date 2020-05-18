@@ -1,4 +1,4 @@
-# Bloomberg Quant Research: Covid-19 Analysis
+# Bloomberg Quant Research: COVIZ
 Jupyter notebooks for Covid-19 data analysis & visualization
 
 
@@ -17,7 +17,7 @@ https://github.com/CSSEGISandData/COVID-19
 
 The Dashboard allows the users to select a country from an interactive world map and view various statistics. The first outer tab (Infection Maps) is divided into two panels. The left one presents the world and US states maps. The right panel presents a graph of Cases, Deaths, Recovered and Active Cases of the selected country/state and two tables of top 20 countries and states in the chosen category (top left toggle buttons).
 
-![World map and graph](screenshots/World_map_white_theme.PNG)
+![World map and graph](screenshots/World_map_black_theme.PNG)
 
 There are four groups of toggle buttons in the top left panel:
 * Data : Choose which data to use to color the map (Cases, Deaths, Recovered or Active Cases)
@@ -34,7 +34,7 @@ Date selector and animation:
 * Select the date of the data to represent.
 * Play button to animate maps and tables.
 
-![US map and tables](screenshots/US_map_white_theme.PNG)
+![US map and tables](screenshots/US_map_black_theme.PNG)
 
 
 The second outer tab presents an interactive rebased graph.
@@ -51,17 +51,20 @@ You can select :
   * Data to apply threshold on (Cases, Deaths or Recovered). Deaths in our example.
   * Normalization to apply (by population or raw values). Values in our example.
 
-![Rebased graph](screenshots/Rebased_graph_white_theme.PNG)
+![Rebased graph](screenshots/Rebased_graph_black_theme.PNG)
 
-The third tab shows an interactive HeatMap.
-Like for the previous tab you can select the countries/states and the data you want to plot.
+The third tab shows an interactive Heatmap.
+Like for the previous tab, you can select the countries/states and the data you want to plot.
 
-![HeatMap graph](screenshots/HeatMap_white_theme.PNG)
+![Heatmap](screenshots/Heatmap_black_theme.PNG)
 
 The last tab allows you to create your own graph. You can select the data you want to represent on X and Y axes (by clicking on the toggle buttons) and you can select any country or US states. Also you have the possibility to represent the whole time series (Line plot) that you can animate or only the last data point (Scatter plot).
 
-![OwnGraph1](screenshots/Create_your_own_graph_1_white_theme.PNG)
+![CGraph1](screenshots/Custom_graph_1_black_theme.PNG)
 
-![OwnGraph2](screenshots/Create_your_own_graph_2_white_theme.PNG)
+![CGraph2](screenshots/Custom_graph_2_black_theme.PNG)
 
+## License
 
+This software is licensed under the Apache 2.0 license. See the [LICENSE](LICENSE) file
+for details.
