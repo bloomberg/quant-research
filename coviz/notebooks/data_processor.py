@@ -33,12 +33,12 @@ class DataProcessor:
 
     def get_ts(self, country_name, data, norm, scale, data_type):
         if country_name:
-            if norm == "Per 1MPop":
+            if norm == "Per million":
                 ts = self.dict_data_pop[data].loc[:, country_name]
             else:
                 ts = self.dict_data[data].loc[:, country_name]
         else:
-            if norm == "Per 1MPop":
+            if norm == "Per million":
                 ts = self.dict_data_pop[data]
             else:
                 ts = self.dict_data[data]
