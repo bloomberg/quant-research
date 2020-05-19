@@ -8,10 +8,6 @@ Data repository for Novel Coronavirus (COVID-19) Cases is provided by Johns Hopk
 
 https://github.com/CSSEGISandData/COVID-19
 
-## Project Outline
-1)	Visualization of the data (Dashboard)
-2)	Epidemiological modeling of the pandemic with SIR model and variants
-
 
 ## Dashboard
 
