@@ -37,14 +37,14 @@ The second outer tab presents an interactive rebased graph.
 Rebased graph example : Log Cases/1MPop in France, Spain and New York since number of deaths = 1000
 You can select :
 * Output Data :
-  * Data to plot (Cases, Deaths or Recovered). Cases in our example.
+  * Data to plot (Cases, Deaths, Active or Recovered). Cases in our example.
   * Normalization to apply (by population or none). Per 1M Pop in our example
   * Type of time series (Total (cumulative number), Diff (daily differences) or % change). Total in our example.
   * Scale of the rebased graph (Linear or Log). Log in our example.
   * Countries or states. France Spain and New York in our example.
 * Threshold Data :
   * Value of the threshold (if equal 0 it will plot data vs calendar days). 1000 in our example.
-  * Data to apply threshold on (Cases, Deaths or Recovered). Deaths in our example.
+  * Data to apply threshold on (Cases, Deaths, Active or Recovered). Deaths in our example.
   * Normalization to apply (by population or raw values). Values in our example.
 
 ![Rebased graph](screenshots/Rebased_graph_black_theme.PNG)
