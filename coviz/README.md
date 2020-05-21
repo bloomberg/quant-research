@@ -44,7 +44,7 @@ You can select :
   * Countries or states. France Spain and New York in our example.
 * Threshold Data :
   * Value of the threshold (if equal 0 it will plot data vs calendar days). 1000 in our example.
-  * Data to apply threshold on (Cases, Deaths, Active or Recovered). Deaths in our example.
+  * Data to apply threshold on (Cases, Deaths or Recovered). Deaths in our example.
   * Normalization to apply (by population or raw values). Values in our example.
 
 ![Rebased graph](screenshots/Rebased_graph_black_theme.PNG)
