@@ -1,6 +1,7 @@
 # Bloomberg Quant Research: COVIZ
 Jupyter notebooks for Covid-19 data analysis & visualization
 
+[![Binder](https://mybinder.org/v2/gh/bloomberg/quant-research/master?urlpath=voila%2Frender%2Fcoviz%2Fnotebooks%2FDashboard.ipynb)
 
 ## Data Source
 
@@ -37,7 +38,7 @@ The second outer tab presents an interactive rebased graph.
 Rebased graph example : Log Cases/1MPop in France, Spain and New York since number of deaths = 1000
 You can select :
 * Output Data :
-  * Data to plot (Cases, Deaths or Recovered). Cases in our example.
+  * Data to plot (Cases, Deaths, Active or Recovered). Cases in our example.
   * Normalization to apply (by population or none). Per 1M Pop in our example
   * Type of time series (Total (cumulative number), Diff (daily differences) or % change). Total in our example.
   * Scale of the rebased graph (Linear or Log). Log in our example.
