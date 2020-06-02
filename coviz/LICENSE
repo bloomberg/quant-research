@@ -209,3 +209,21 @@ https://data.worldbank.org/indicator/SP.POP.TOTL?end=2018&start=1960
 
 The license and attribution may be found at 
 https://datacatalog.worldbank.org/public-licenses#cc-by
+
+US States recovery and test data (COVID19Tracking project) License
+==================================================================
+
+US States and recovery data is adapted from COVID19 Tracking project.
+https://github.com/COVID19Tracking/covid-tracking-data
+
+The license (Apache license 2.0) and attribution may be found at
+https://github.com/COVID19Tracking/covid-tracking-data/blob/master/LICENSE
+
+World tests data (Our World in Data) License
+============================================
+
+World tests data is adapted from Our World in Data Covid19 project.
+https://github.com/owid/covid-19-data/tree/master/public/data
+
+Data is licensed under the Creative Commons BY license
+https://creativecommons.org/licenses/by/4.0/
