@@ -25,6 +25,7 @@ class Toggle_Buttons(ipw.Box):
         min_description_width,
         horizontal=True,
         button_width="100%",
+        style="info",
     ):
         self.options = options
         self.value = value
@@ -32,6 +33,7 @@ class Toggle_Buttons(ipw.Box):
         self.min_description_width = min_description_width
         self.min_button_width = min_button_width
         self.button_width = button_width
+        self.style = style
         self.buttons = [
             ipw.ToggleButton(
                 description=d,
@@ -47,29 +49,42 @@ class Toggle_Buttons(ipw.Box):
         ]
         self.index_val = options.index(value)
         self.buttons[self.index_val].value = True
-        self.buttons[self.index_val].button_style = "success"
+        self.buttons[self.index_val].button_style = self.style
         if horizontal:
             super(ipw.Box, self).__init__(
                 children=[
                     ipw.HTML(
-                        """<p style="text-align:right">""" + self.description + "</p>",
+                        self.description,
                         layout=ipw.Layout(
-                            min_width=self.min_description_width, width="auto"
+                            min_width=self.min_description_width,
+                            width="auto",
+                            height="auto",
+                            margin="0 0 0 0",
                         ),
                     )
                 ]
                 + self.buttons,
                 layout=ipw.Layout(
-                    align_items="stretch", width="auto", display="flex", overflow="auto"
+                    align_items="stretch",
+                    width="auto",
+                    display="flex",
+                    overflow="auto",
+                    height="100%",
                 ),
             )
         else:
             super(ipw.Box, self).__init__(
                 children=[
                     ipw.HTML(
-                        """<p style="text-align:center">""" + self.description + "</p>",
+                        "<p style='text-align: center; padding:0; margin:0'>"
+                        + self.description
+                        + "</p>",
                         layout=ipw.Layout(
-                            min_width=self.min_description_width, width="auto"
+                            min_width=self.min_description_width,
+                            width="auto",
+                            height="30px",
+                            align_items="center",
+                            margin="0 0 0 0",
                         ),
                     )
                 ]
@@ -91,7 +106,7 @@ class Toggle_Buttons(ipw.Box):
             for b in self.buttons:
                 if b.description == args[0]["owner"].description:
                     b.value = True
-                    b.button_style = "success"
+                    b.button_style = self.style
                 else:
                     b.value = False
                     b.button_style = ""
