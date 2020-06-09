@@ -16,6 +16,7 @@ import pandas as pd
 import numpy as np
 import math
 
+
 class DataProcessor:
     def __init__(self, dict_data, pops, name, name_to_ID, add_world_data=False):
         self.STDT = dict_data["Cases"].index[0]
@@ -61,7 +62,7 @@ class DataProcessor:
             ts = ts.rolling(window=n).mean()
 
         if scale == "Log":
-            ts = ts.where(ts > 0, math.nan)
+            ts = ts.where(ts > 1e-10, math.nan)
 
         return ts
 
