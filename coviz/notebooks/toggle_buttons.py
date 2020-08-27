@@ -112,8 +112,26 @@ class Toggle_Buttons(ipw.Box):
                     b.button_style = ""
         self.value = args[0]["owner"].description
         return
-
+    
+    def set_value(self, val):
+        if val != self.value:
+            for b in self.buttons:
+                if b.description == val:
+                    b.value = True
+                    b.button_style = self.style
+                else:
+                    b.value = False
+                    b.button_style = ""
+        self.value = val
+        return
+    
     def add_observe(self, f_observe, val):
         for b in self.buttons:
             b.observe(f_observe, val)
         return
+    
+    def del_observe(self, f_observe, val):
+        for b in self.buttons:
+            b.unobserve(f_observe, val)
+        return
+    
