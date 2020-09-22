@@ -9,4 +9,4 @@ dependencies:
   - matplotlib
   - jupyter
   - bqplot
-  - voila
+  - voila==0.1.21
