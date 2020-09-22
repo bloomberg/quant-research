@@ -1,0 +1,5 @@
+.ipython
+.local
+.jupyter
+.git
+__pycache__
