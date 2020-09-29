@@ -1,4 +1,4 @@
-# Bloomberg Quant Research: COVIZ
+# Bloomberg Quant Research: CoDash
 Jupyter notebooks for Covid-19 data analysis & visualization
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/bloomberg/quant-research/master?urlpath=voila%2Frender%2Fcoviz%2Fnotebooks%2FDashboard.ipynb)
