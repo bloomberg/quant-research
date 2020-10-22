@@ -26,6 +26,8 @@ class Toggle_Buttons(ipw.Box):
         horizontal=True,
         button_width="100%",
         style="info",
+        tooltips=None,
+        description_tooltip='',
     ):
         self.options = options
         self.value = value
@@ -34,19 +36,35 @@ class Toggle_Buttons(ipw.Box):
         self.min_button_width = min_button_width
         self.button_width = button_width
         self.style = style
-        self.buttons = [
-            ipw.ToggleButton(
-                description=d,
-                value=False,
-                button_style="",
-                layout=ipw.Layout(
-                    min_width=self.min_button_width,
-                    width=self.button_width,
-                    min_height="30px",
-                ),
-            )
-            for d in options
-        ]
+        if tooltips:
+            self.buttons = [
+                ipw.ToggleButton(
+                    description=d,
+                    value=False,
+                    button_style="",
+                    tooltip=t,
+                    layout=ipw.Layout(
+                        min_width=self.min_button_width,
+                        width=self.button_width,
+                        min_height="30px",
+                    ),
+                )
+                for t, d in zip(tooltips, options)
+            ]
+        else:
+            self.buttons = [
+                ipw.ToggleButton(
+                    description=d,
+                    value=False,
+                    button_style="",
+                    layout=ipw.Layout(
+                        min_width=self.min_button_width,
+                        width=self.button_width,
+                        min_height="30px",
+                    ),
+                )
+                for d in options
+            ]
         self.index_val = options.index(value)
         self.buttons[self.index_val].value = True
         self.buttons[self.index_val].button_style = self.style
@@ -54,7 +72,9 @@ class Toggle_Buttons(ipw.Box):
             super(ipw.Box, self).__init__(
                 children=[
                     ipw.HTML(
-                        self.description,
+                        "<p style='padding:0; margin:0'; title="+ description_tooltip + ">"
+                        + self.description
+                        + "</p>",
                         layout=ipw.Layout(
                             min_width=self.min_description_width,
                             width="auto",
@@ -76,7 +96,7 @@ class Toggle_Buttons(ipw.Box):
             super(ipw.Box, self).__init__(
                 children=[
                     ipw.HTML(
-                        "<p style='text-align: center; padding:0; margin:0'>"
+                        "<p style='text-align: center; padding:0; margin:0'; title="+ description_tooltip + ">"
                         + self.description
                         + "</p>",
                         layout=ipw.Layout(
