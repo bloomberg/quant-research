@@ -26,7 +26,7 @@ EXPOSE 8866
 USER root
 
 # start voila dahboard
-CMD ["voila", "coviz/notebooks/Dashboard.ipynb", "--VoilaConfiguration.theme='dark'", "--MappingKernelManager.cull_interval=60", "--MappingKernelManager.cull_idle_timeout=300", "--no-browser"]
+CMD ["voila", "covid/notebooks/Dashboard.ipynb", "--VoilaConfiguration.theme='dark'", "--MappingKernelManager.cull_interval=60", "--MappingKernelManager.cull_idle_timeout=300", "--no-browser"]
 
 # EXPOSE 8888
 # start jupyter notebook
