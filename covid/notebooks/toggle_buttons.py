@@ -14,6 +14,37 @@
 
 import ipywidgets as ipw
 
+button_style = """
+<style>
+    .{0:s} {{
+        overflow: visible;
+        position: relative;
+    }}
+    .{0:s}:hover{{
+        text-decoration: none;
+    }}
+    .{0:s}::before {{
+        height: 25px;
+        background: #4caf50;
+        border-radius: 6px;
+        padding: 2px 6px;
+        white-space: nowrap;
+        color: white;
+        z-index: 999;
+        font-weight: bold;
+        content:{1:s};
+        {2:s}
+    }}
+    .{0:s}::before {{
+        position: absolute;
+        display: none;
+    }}
+    .{0:s}:hover::before {{
+        display: block;
+    }}
+</style>
+"""
+
 
 class Toggle_Buttons(ipw.Box):
     def __init__(
@@ -23,12 +54,16 @@ class Toggle_Buttons(ipw.Box):
         description,
         min_button_width,
         min_description_width,
+        key,
         horizontal=True,
         button_width="100%",
         style="info",
         tooltips=None,
-        description_tooltip='',
+        description_tooltip="",
+        tooltip_position="right",
     ):
+        self.all_styles = ""
+        self.key = key
         self.options = options
         self.value = value
         self.description = description
@@ -36,21 +71,9 @@ class Toggle_Buttons(ipw.Box):
         self.min_button_width = min_button_width
         self.button_width = button_width
         self.style = style
+        self.tooltip_position = tooltip_position
         if tooltips:
-            self.buttons = [
-                ipw.ToggleButton(
-                    description=d,
-                    value=False,
-                    button_style="",
-                    tooltip=t,
-                    layout=ipw.Layout(
-                        min_width=self.min_button_width,
-                        width=self.button_width,
-                        min_height="30px",
-                    ),
-                )
-                for t, d in zip(tooltips, options)
-            ]
+            self.buttons = [self.create_button(d, t) for t, d in zip(tooltips, options)]
         else:
             self.buttons = [
                 ipw.ToggleButton(
@@ -72,7 +95,9 @@ class Toggle_Buttons(ipw.Box):
             super(ipw.Box, self).__init__(
                 children=[
                     ipw.HTML(
-                        "<p style='padding:0; margin:0'; title="+ description_tooltip + ">"
+                        "<p style='padding:0; margin:0'; title="
+                        + description_tooltip
+                        + ">"
                         + self.description
                         + "</p>",
                         layout=ipw.Layout(
@@ -86,9 +111,9 @@ class Toggle_Buttons(ipw.Box):
                 + self.buttons,
                 layout=ipw.Layout(
                     align_items="stretch",
-                    width="auto",
+                    width="100%",
                     display="flex",
-                    overflow="auto",
+                    overflow="visible",
                     height="100%",
                 ),
             )
@@ -96,7 +121,9 @@ class Toggle_Buttons(ipw.Box):
             super(ipw.Box, self).__init__(
                 children=[
                     ipw.HTML(
-                        "<p style='text-align: center; padding:0; margin:0'; title="+ description_tooltip + ">"
+                        "<p style='text-align: center; padding:0; margin:0'; title="
+                        + description_tooltip
+                        + ">"
                         + self.description
                         + "</p>",
                         layout=ipw.Layout(
@@ -132,7 +159,7 @@ class Toggle_Buttons(ipw.Box):
                     b.button_style = ""
         self.value = args[0]["owner"].description
         return
-    
+
     def set_value(self, val):
         if val != self.value:
             for b in self.buttons:
@@ -144,14 +171,69 @@ class Toggle_Buttons(ipw.Box):
                     b.button_style = ""
         self.value = val
         return
-    
+
     def add_observe(self, f_observe, val):
         for b in self.buttons:
             b.observe(f_observe, val)
         return
-    
+
     def del_observe(self, f_observe, val):
         for b in self.buttons:
             b.unobserve(f_observe, val)
         return
-    
+
+    def create_button(self, description, tooltip):
+        button_ = ipw.ToggleButton(
+            description=description,
+            value=False,
+            button_style="",
+            layout=ipw.Layout(
+                min_width=self.min_button_width,
+                width=self.button_width,
+                min_height="30px",
+            ),
+        )
+        if self.tooltip_position == "right":
+            tt_pos = """
+            top: 0px;
+            left: 102%"""
+        elif self.tooltip_position == "left":
+            tt_pos = """
+            top: 0px;
+            right: 102%"""
+        elif self.tooltip_position == "top":
+            if description == "Daily % change":
+                tt_pos = """
+                left: -120%;
+                bottom: 105%"""
+            elif len(tooltip) > 20:
+                tt_pos = """
+                left: -60%;
+                bottom: 105%"""
+            else:
+                tt_pos = """
+                left: 0%;
+                bottom: 105%"""
+        elif self.tooltip_position == "bottom":
+            if description == "Daily % change":
+                tt_pos = """
+                left: -120%;
+                top: 105%"""
+            elif len(tooltip) > 20:
+                tt_pos = """
+                left: -60%;
+                top: 105%"""
+            else:
+                tt_pos = """
+                left: 0%;
+                top: 105%"""
+        style = button_style.format(
+            description.replace("%", "pct").replace(" ", "") + "_" + self.key,
+            tooltip,
+            tt_pos,
+        )
+        self.all_styles += style
+        button_.add_class(
+            description.replace("%", "pct").replace(" ", "") + "_" + self.key
+        )
+        return button_
