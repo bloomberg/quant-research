@@ -18,14 +18,17 @@ import math
 
 
 class DataProcessor:
-    def __init__(self, dict_data, pops, name, name_to_ID, add_world_data=False):
+    def __init__(self, dict_data, pops, name, name_to_ID=None, add_world_data=False):
         self.STDT = dict_data["Cases"].index[0]
         self.ENDT = dict_data["Cases"].index[-1]
         self.dict_data = dict_data
         self.pops = pops
         self.name = name
         self.name_to_ID = name_to_ID
-        self.ID_to_name = {v: k for k, v in name_to_ID.items()}
+        if name_to_ID:
+            self.ID_to_name = {v: k for k, v in name_to_ID.items()}
+        else:
+            self.ID_to_name = None
         if add_world_data:
             self.add_world()
         # normalized by pop
@@ -65,7 +68,7 @@ class DataProcessor:
             ts = ts.where(ts > 1e-10, math.nan)
 
         return ts
-
+    
     def get_ts_plot(
         self, country_name, data, norm, scale, data_type, ma, n, date1, date2
     ):
@@ -89,10 +92,16 @@ class DataProcessor:
         return self.dict_data["Cases"].shape[0]
 
     def get_ID(self, name):
-        return self.name_to_ID[name]
+        if self.name_to_ID:
+            return self.name_to_ID[name]
+        else:
+            return None
 
     def get_name(self, ID):
-        return self.ID_to_name[ID]
+        if self.ID_to_name:
+            return self.ID_to_name[ID]
+        else:
+            return None
 
     def get_ts_sort(self, data, norm, scale, data_type, ma, n, date, ascending, K):
         if K:
