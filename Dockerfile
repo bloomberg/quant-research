@@ -14,6 +14,7 @@ RUN conda install --quiet --yes -c conda-forge\
     'matplotlib' \
     'jupyter' \
     'bqplot' \
+    'ipyleaflet' \
     'voila=0.1.21' && \
     jupyter serverextension enable voila --sys-prefix && \
     rm -rf work
