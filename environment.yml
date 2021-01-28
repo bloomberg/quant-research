@@ -10,4 +10,4 @@ dependencies:
   - jupyter
   - bqplot
   - ipyleaflet
-  - voila=0.1.21
+  - voila
