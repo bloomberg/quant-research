@@ -78,9 +78,9 @@ FOLDER_US = "../data/USA/"
 BASE_URL_US = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/" + \
               "master/csse_covid_19_data/csse_covid_19_time_series/"
 URL_TESTS_US = "https://api.covidtracking.com/v1/states/daily.csv"
-URL_US_States_vaccine = "https://raw.githubusercontent.com/govex/COVID-19/" + \
-                        "master/data_tables/vaccine_data/raw_data/" + \
-                        "vaccine_data_us_state_timeline.csv"
+URL_US_States_vaccine = "https://raw.githubusercontent.com/govex/" + \
+                      "COVID-19/master/data_tables/vaccine_data/archive/" + \
+                      "vaccine_data_us_state_timeline.csv"
 
 STDT = None
 ENDT = None
