@@ -78,10 +78,8 @@ FOLDER_US = "../data/USA/"
 BASE_URL_US = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/" + \
               "master/csse_covid_19_data/csse_covid_19_time_series/"
 URL_TESTS_US = "https://api.covidtracking.com/v1/states/daily.csv"
-URL_US_States_vaccine = "https://raw.githubusercontent.com/govex/" + \
-                      "COVID-19/master/data_tables/vaccine_data/archive/" + \
-                      "vaccine_data_us_state_timeline.csv"
-
+URL_US_States_vaccine = "https://raw.githubusercontent.com/govex/COVID-" + \
+              "19/master/data_tables/vaccine_data/us_data/time_series/vaccine_data_us_timeline.csv"
 STDT = None
 ENDT = None
 
@@ -304,18 +302,16 @@ def collect_US_data(BASE_URL, FOLDER_US, URL_TESTS_US, URL_US_States_vaccine):
             )
         ).sort_index()
 
+    df_vac = pd.read_csv(URL_US_States_vaccine)
     df_vac = pd.pivot_table(
-        pd.read_csv(
-            URL_US_States_vaccine,
-            usecols=["date", "Province_State", "doses_admin_total"],
-            index_col=[1, 0],
-        ),
-        columns=["Province_State"],
-        index=["date"],
-    ).loc[:, "doses_admin_total"]
-    df_vac.index=[pd.to_datetime(s) for s in df_vac.index.values]
-    df_vac.sort_index(inplace=True)
-    df_vac.index = [str(s).split('T')[0] for s in df_vac.index.values]
+               df_vac.loc[
+                       df_vac.loc[:, "Vaccine_Type"] == "All",
+                       ["Province_State", "Date", "Doses_admin"],
+                   ],
+                   values="Doses_admin",
+                   index="Date",
+                   columns="Province_State",
+               )
     df_vac.fillna(method="ffill", inplace=True)
     df_vac = df_vac.loc[STDT:ENDT]
 
