@@ -6,6 +6,9 @@ Jupyter notebooks for Covid-19 data analysis & visualization
 
 ## Getting started
 
+### Download Docker application
+- You can find instructions on how to do that here: https://docs.docker.com/get-docker/
+
 ### Download this repository
 
 ```
