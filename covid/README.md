@@ -17,10 +17,10 @@ cd quant-research
 `$ cd coviz`
 
 #### Build the docker image
-`$ docker build -t bloomberg-covid-Dashboard`
+`$ docker build -t bloomberg-covid-dashboard`
 
 #### Run the docker image
-`$ docker run -p 8866:8866 bloomberg-covid-Dashboard`
+`$ docker run -p 8866:8866 bloomberg-covid-dashboard`
 
 #### Open URL
 Navigate to `http://localhost:8866` in your browser.
