@@ -1,36 +1,43 @@
 # Bloomberg Quant Research: Covid-19 Dashboard
+
 Jupyter notebooks for Covid-19 data analysis & visualization
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/bloomberg/quant-research/master?urlpath=voila%2Frender%2Fcovid%2Fnotebooks%2FDashboard.ipynb)
 
 ## Getting started
-#### Download this repository
+
+### Download this repository
+
 ```
 git clone git@github.com:bloomberg/quant-research.git
 cd quant-research
 ```
+
 -- or --
 
-[Download as a zip file](https://github.com/bloomberg/quant-research/archive/master.zip), extract it, and then go to that folder in your computer's terminal or command prompt.
+- [Download as a zip file](https://github.com/bloomberg/quant-research/archive/master.zip), extract it, and then go to that folder in your computer's terminal or command prompt.
 
-#### change directory to `coviz` folder
-`$ cd coviz`
+### change directory to `coviz` folder
 
-#### Build the docker image
-`$ docker build -t bloomberg-covid-dashboard`
+- `$ cd coviz`
 
-#### Run the docker image
-`$ docker run -p 8866:8866 bloomberg-covid-dashboard`
+### Build the docker image
 
-#### Open URL
-Navigate to `http://localhost:8866` in your browser.
+- `$ docker build -t bloomberg-covid-dashboard`
+
+### Run the docker image
+
+- `$ docker run -p 8866:8866 bloomberg-covid-dashboard`
+
+### Open URL
+
+- Navigate to `http://localhost:8866` in your browser.
 
 ## Data Source
 
 Data repository for Novel Coronavirus (COVID-19) Cases is provided by Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE), which curates the datasets from various sources including WHO, CDC and others.
 
 https://github.com/CSSEGISandData/COVID-19
-
 
 ## Dashboard
 
@@ -39,36 +46,39 @@ The Dashboard allows the users to select a country from an interactive world map
 ![World map and graph](screenshots/World_map_black_theme.PNG)
 
 There are four groups of toggle buttons in the top left panel:
-* Data : Choose which data to use to color the map (Cases, Deaths, Recovered or Active Cases)
-* Normalization : Use raw values or divide by population
-* Scale : Log or Linear
-* Type : Total (or cumulative numbers), Diff (or daily differences), % change.
-Changing your selection will update map's colors, right graph and the tables.
+
+- Data : Choose which data to use to color the map (Cases, Deaths, Recovered or Active Cases)
+- Normalization : Use raw values or divide by population
+- Scale : Log or Linear
+- Type : Total (or cumulative numbers), Diff (or daily differences), % change.
+  Changing your selection will update map's colors, right graph and the tables.
 
 Map interactions :
-* Hover on a country or state to view its statistics.
-* Click on a country or state to plot its data in the right figure.
+
+- Hover on a country or state to view its statistics.
+- Click on a country or state to plot its data in the right figure.
 
 Date selector and animation:
-* Select the date of the data to represent.
-* Play button to animate maps and tables.
+
+- Select the date of the data to represent.
+- Play button to animate maps and tables.
 
 ![US map and tables](screenshots/US_map_black_theme.PNG)
-
 
 The second outer tab presents an interactive rebased graph.
 Rebased graph example : Log Cases/1MPop in France, Spain and New York since number of deaths = 1000
 You can select :
-* Output Data :
-  * Data to plot (Cases, Deaths, Active or Recovered). Cases in our example.
-  * Normalization to apply (by population or none). Per 1M Pop in our example
-  * Type of time series (Total (cumulative number), Diff (daily differences) or % change). Total in our example.
-  * Scale of the rebased graph (Linear or Log). Log in our example.
-  * Countries or states. France Spain and New York in our example.
-* Threshold Data :
-  * Value of the threshold (if equal 0 it will plot data vs calendar days). 1000 in our example.
-  * Data to apply threshold on (Cases, Deaths or Recovered). Deaths in our example.
-  * Normalization to apply (by population or raw values). Values in our example.
+
+- Output Data :
+  - Data to plot (Cases, Deaths, Active or Recovered). Cases in our example.
+  - Normalization to apply (by population or none). Per 1M Pop in our example
+  - Type of time series (Total (cumulative number), Diff (daily differences) or % change). Total in our example.
+  - Scale of the rebased graph (Linear or Log). Log in our example.
+  - Countries or states. France Spain and New York in our example.
+- Threshold Data :
+  - Value of the threshold (if equal 0 it will plot data vs calendar days). 1000 in our example.
+  - Data to apply threshold on (Cases, Deaths or Recovered). Deaths in our example.
+  - Normalization to apply (by population or raw values). Values in our example.
 
 ![Rebased graph](screenshots/Rebased_graph_black_theme.PNG)
 
