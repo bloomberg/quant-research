@@ -1,7 +1,29 @@
 # Bloomberg Quant Research: Covid-19 Dashboard
 Jupyter notebooks for Covid-19 data analysis & visualization
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/bloomberg/quant-research/master?urlpath=voila%2Frender%2Fcoviz%2Fnotebooks%2FDashboard.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/bloomberg/quant-research/master?urlpath=voila%2Frender%2Fcovid%2Fnotebooks%2FDashboard.ipynb)
+
+## Getting started
+#### Download this repository
+```
+git clone git@github.com:bloomberg/quant-research.git
+cd quant-research
+```
+-- or --
+
+[Download as a zip file](https://github.com/bloomberg/quant-research/archive/master.zip), extract it, and then go to that folder in your computer's terminal or command prompt.
+
+#### change directory to `coviz` folder
+`$ cd coviz`
+
+#### Build the docker image
+`$ docker build -t bloomberg-covid-Dashboard`
+
+#### Run the docker image
+`$ docker run -p 8866:8866 bloomberg-covid-Dashboard`
+
+#### Open URL
+Navigate to `http://localhost:8866` in your browser.
 
 ## Data Source
 
