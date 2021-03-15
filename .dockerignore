@@ -3,3 +3,4 @@
 .jupyter
 .git
 __pycache__
+.DS_Store
