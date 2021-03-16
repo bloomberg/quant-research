@@ -23,4 +23,4 @@ RUN conda install --quiet --yes -c conda-forge\
 EXPOSE 8866
 
 # start voila dahboard
-CMD ["voila", "covid/notebooks/Dashboard.ipynb", "--VoilaConfiguration.theme='dark'", "--MappingKernelManager.cull_interval=60", "--MappingKernelManager.cull_idle_timeout=300", "--no-browser"]
+CMD ["voila", "notebooks/Dashboard.ipynb", "--VoilaConfiguration.theme='dark'", "--MappingKernelManager.cull_interval=60", "--MappingKernelManager.cull_idle_timeout=300", "--no-browser"]
