@@ -6,35 +6,61 @@ Jupyter notebooks for Covid-19 data analysis & visualization
 
 ## Getting started
 
-### Download Docker application
-- You can find instructions on how to do that here: https://docs.docker.com/get-docker/
+### Mac
 
-### Download this repository
+The one-time setup and launch of the BCD application will take about 5 minutes. After that, you’ll be able to launch it in less than a minute each time.
 
-```
-git clone git@github.com:bloomberg/quant-research.git
-cd quant-research
-```
+Please note that any text you need to copy/paste be offset by quotes (“”). Do not include the quotes when you copy/paste from the instructions below.
 
--- or --
+#### First time setup
 
-- [Download as a zip file](https://github.com/bloomberg/quant-research/archive/master.zip), extract it, and then go to that folder in your computer's terminal or command prompt.
+- Follow the instructions to download Docker here: https://docs.docker.com/get-docker/
+- Click this link to download a folder that contains the source code for BCD: https://github.com/bloomberg/quant-research/archive/master.zip
+- Double-click the folder, which is called quant-research master, after you download it. You should now see a folder called covid. Take note of where this folder is saved on your computer because you will need to access it later.
+- Find your computer’s terminal and click to open it. On a Mac, this is typically in Applications > Utilities > Terminal
+- Once the terminal window opens, type “cd “ (please note that you have to copy the letters cd and the space after the d), then find the folder called covid that you just downloaded – do not hit enter just yet!
+- Drag the covid folder into the terminal window just after the space in “cd “ and now you can hit enter.
+- You’ll see the terminal auto-run some commands. When it finishes, copy this text and paste it into the terminal window, then hit enter: “docker build -t bloomberg-covid-dashboard .” (please note the . is inside the quotes and has a space in front of it – you need to copy/paste both)
+- You’ll once again see the terminal auto-run some commands while it is building the application. It will take a little over a minute to complete.
+- Copy this text and paste it into the terminal window, then hit enter: “docker run -p 8866:8866 bloomberg-covid-dashboard”
+- Click this link to launch BCD: http://localhost:8866
+- You’ll see a black screen and in about 30 seconds, the BCD application will open – you are finished!
 
-### change directory to `coviz` folder
+#### Returning users
 
-- `$ cd coviz`
+- Find your computer’s terminal and click to open it. On a Mac, this is typically in Applications > Utilities > Terminal
+- Copy this text and paste it into the terminal window, then hit enter: “docker run -p 8866:8866 bloomberg-covid-dashboard”
+- Click this link to launch BCD: http://localhost:8866
 
-### Build the docker image
+### Windows
 
-- `$ docker build -t bloomberg-covid-dashboard`
+The one-time setup and launch of the BCD application will take about 15 minutes. After that, you’ll be able to launch it in less than a minute each time.
 
-### Run the docker image
+Please note that any text you need to copy/paste be offset by quotes (“”). Do not include the quotes when you copy/paste from the instructions below.
 
-- `$ docker run -p 8866:8866 bloomberg-covid-dashboard`
+#### First time setup
 
-### Open URL
+- Follow the instructions to download Docker here (and note that you may be asked to install WSL components for Windows and restart Windows): https://docs.docker.com/get-docker/
+  - In addition, if you are running Windows 10 Home or you are not an admin on Windows 10 Professional, you will need to follow additional steps which you can find detailed here under the section called “Install Docker Desktop on Windows”; you will need to reboot your computer to complete the setup. If you are not sure which version you have or if you are an admin, follow the additional steps.
+- Click this link to download a folder that contains the source code for BCD: https://github.com/bloomberg/quant-research/archive/master.zip
+- Unzip/open the folder, which is called quant-research master, after you download it. To do this, either right click on the folder name and click extract and click into the unzipped quant-research master folder. You should now see a folder called covid. Take note of where this folder is saved on your computer because you will need to access it later.
+- Find your computer’s terminal and click to open it. On a Windows machine, you can typically type “PowerShell” in the Windows search bar.
+- Once the terminal window opens, if you see a directory for anything other than C:, type “C:” and then enter
+- Type “cd “ (please note that you have to copy the letters cd and the space after the d), then find the folder called covid that you just downloaded. Do not hit enter after you type “cd “
+- Click into the covid folder and copy the path to that folder
+- Paste the folder path after the space in “cd “ and hit enter
+- You’ll see the terminal auto-run some commands. When it finishes, copy this text and paste it into the terminal window, then hit enter: “docker build -t bloomberg-covid-dashboard .” (please note the . is inside the quotes and has a space in front of it – you need to copy/paste both)
+- You’ll once again see the terminal auto-run some commands while it is building the application. It will take a little over a minute to complete.
+- Copy this text and paste it into the terminal window, then hit enter: “docker run -p 8866:8866 bloomberg-covid-dashboard”
+- Click this link to launch BCD and you are finished: http://localhost:8866
+- You’ll see a black screen and in about 30 seconds, the BCD application will open!
 
-- Navigate to `http://localhost:8866` in your browser.
+#### Returning users
+
+- Find your computer’s terminal and click to open it. On a Windows machine, you can typically type “PowerShell” in the Windows search bar.
+- Once the terminal window opens, if you see a directory for anything other than C:, type “C:” and then enter
+  - Copy this text and paste it into the terminal window, then hit enter: “docker run -p 8866:8866 bloomberg-covid-dashboard”
+  - Click this link to launch BCD: http://localhost:8866
 
 ## Data Source
 
