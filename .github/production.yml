@@ -4,7 +4,7 @@ on:
     branches:
       - production
 
-name: Deploy to Amazon ECS Stage
+name: Deploy to Amazon ECS Production
 
 jobs:
   deploy:
