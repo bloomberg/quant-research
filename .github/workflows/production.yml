@@ -36,6 +36,7 @@ jobs:
         # Build a docker container and
         # push it to ECR so that it can
         # be deployed to ECS.
+        cd covid
         docker build -t $ECR_REPOSITORY:$IMAGE_TAG .
         docker tag $ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         docker tag $ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:latest
