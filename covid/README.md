@@ -79,7 +79,7 @@ There are four groups of toggle buttons in the top left panel:
 - Normalization : Use raw values or divide by population
 - Type : Total (or cumulative numbers), Diff (or daily differences), % change.
 - Scale : Log or Linear
-  Changing your selection will update map's colors, right-hand side graph and the tables.
+  Changing your selection will update the map's colors, right-hand side graph, and the tables.
 
 Map interactions :
 
