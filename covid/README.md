@@ -2,7 +2,6 @@
 
 Jupyter notebooks for COVID-19 data analysis & visualization
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/bloomberg/quant-research/master?urlpath=voila%2Frender%2Fcovid%2Fnotebooks%2FDashboard.ipynb)
 
 ## Getting started
 
@@ -70,7 +69,7 @@ https://github.com/CSSEGISandData/COVID-19
 
 ## Using the Bloomberg COVID-19 Dashboard
 
-The Dashboard allows users to select a country from an interactive world map and view various statistics. The first tab (Infection Maps) is divided into two panels. The left one presents a map of the world and a map of the United States. The right panel presents a graph of Cases, Deaths, Vaccines, and Tests for the selected country/state and two tables of top 20 countries and states in the chosen category (top left toggle buttons).
+The Dashboard allows users to select a country from an interactive world map and view various statistics. The first tab (Infection Maps) is divided into two panels. The left one presents a map of the world and a map of the United States. The right panel presents a graph of Cases, Deaths, Vaccines, and Tests for the selected country/state and two tables of ranked countries and states in the chosen category.
 
 ![World map and graph](screenshots/World_map_black_theme.PNG)
 
@@ -80,12 +79,12 @@ There are four groups of toggle buttons in the top left panel:
 - Normalization : Use raw values or divide by population
 - Type : Total (or cumulative numbers), Diff (or daily differences), % change.
 - Scale : Log or Linear
-  Changing your selection will update the map's colors, right graph, and the tables.
+  Changing your selection will update the map's colors, right-hand side graph, and the tables.
 
 Map interactions :
 
 - Hover on a country or state to view its statistics.
-- Click on a country or state to plot its data in the right figure.
+- Click on a country or state to plot its data in the right-hand side figure.
 
 Date selector and animation:
 
@@ -95,19 +94,19 @@ Date selector and animation:
 ![US map and tables](screenshots/US_map_black_theme.PNG)
 
 The second tab presents an interactive rebased graph.
-Rebased graph example : Log Cases/1MPop in France, Spain and New York since number of deaths = 1000
+Time Track example : Deaths/1MPop daily change in France, Brazil, Russia, India, United States, Texas and California since number of vaccines/1M = 2000
 You can select :
 
 - Output Data :
-  - Data to plot (Cases, Deaths, Vaccines or Tests). Cases in our example.
+  - Data to plot (Cases, Deaths, Vaccines or Tests). Deaths in our example.
   - Normalization to apply (by population or none). Per 1M Pop in our example
-  - Type of time series (Total (cumulative number), Diff (daily differences) or % change). Total in our example.
-  - Scale of the rebased graph (Linear or Log). Log in our example.
-  - Countries or states. France Spain and New York in our example.
+  - Type of time series (Total (cumulative number), Diff (daily differences) or % change). daily change in our example.
+  - Scale of the rebased graph (Linear or Log). Linear in our example.
+  - Countries or states. France, Brazil, Russia, India, United States, Texas and California in our example.
 - Threshold Data :
-  - Value of the threshold (if equal 0 it will plot data vs calendar days). 1000 in our example.
-  - Data to apply threshold on (Cases, Deaths or Vaccines). Deaths in our example.
-  - Normalization to apply (by population or raw values). Values in our example.
+  - Value of the threshold. 2000 in our example.
+  - Data to apply threshold on (Cases, Deaths or Vaccines). Vaccines in our example.
+  - Normalization to apply (by population or raw values). Per million in our example.
 
 ![Rebased graph](screenshots/Rebased_graph_black_theme.PNG)
 
